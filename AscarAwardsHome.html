@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AscarAwards Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Poppins:ital,wght@0,400;0,500;1,500;1,600;1,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<style>
+      
+    :root{
+        --blue : #05f40d;
+        --red: #f10ef1;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container-fluid{
+        
+        font-family: 'Josefin Sans', sans-serif;
+        min-height: 100vh;
+        width: 100%;
+        background: rgba(5, 0, 0, 0.971);
+        background:linear-gradient(rgba(10, 0, 0, 0.637),rgba(0, 0, 0, 0.593),rgba(0,0,0,0.55)),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeNdp1OWgofw0t7ZQQEyt3uEJAlWGelp9O9haiPyADFYKK41PohGin_7RUuTVmsxNjHiY&usqp=CAU);
+        display: grid;
+        grid-template-columns: 0.20fr 0.04fr;
+        grid-template-rows: 0.7fr 3fr;
+        grid-template-areas: 'header header header'
+                             'sidebar introAnime introAnime'
+                             'sidebar animeList animeList'
+    }
+    .header{
+        display: flex;
+        margin-top: 10px;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.947);
+        color: white;
+        grid-area: header;
+    }
+    .header .search{
+       margin-top: 36px;
+    }
+    .header .nav-item {
+        text-decoration: none;
+       margin-right: 9px;
+    }
+
+    .header .search i{
+        scale: 1.8;
+        margin-top: 9px;
+        margin-left: 13px;
+        cursor: pointer;
+        color: var(--red);
+    }
+    .header h2{
+        font-size: 25px;      
+        padding: 20px;
+        color: white;    
+        font-family: 'Bruno Ace SC', cursive;
+        margin-left: 0px;
+    }
+    .header  button{
+        margin-right: 25px;
+        margin-left: 30px;
+        border: 2px solid;
+        transition: transform 1.2s;
+    }
+    .header  button:hover{
+     transform: scale(0.9);
+     color: white;
+    }
+    .header  i:hover{
+        color: white;
+        background: skyblue;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: rotate(190deg);
+    }
+    .header input{
+        padding: 4px;
+    }
+    .header  i{
+        margin-top: 3.5px;
+        color: aqua;
+        cursor: pointer;
+        transition: transform 1.2s;
+        display: none;  /*change this later! dont forget */
+    }
+    
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        grid-area: sidebar;
+        padding: 30px;
+        transform: translateX(-10px);
+        position:sticky;
+    }
+    .sidebar i{
+        color: #db06fc;
+        cursor: pointer;
+        transition: transform 1.2s;
+    }
+    .sidebar i:hover{
+        transform: translateX(7px);
+    }
+    .introAnime{
+        grid-area: introAnime;    
+         
+        margin-top: 32px;      
+       
+    }
+    .animeList .card{
+        position: relative;
+        
+    }
+    .animeList .card:hover{
+        background: linear-gradient(rgba(0,0,255,0.05), rgba(140, 65, 220, 0.949));
+    }
+    .introAnime .card-img-top{
+        height: 45vh;
+        object-fit: cover;
+    }
+    .introAnime .card .card-img-overlay {
+            font-size: 15px;
+                  
+            color: white;
+            padding-top: 90px;
+            background: linear-gradient(rgba(0,0,0.75),rgba(0,0,0,0.55),rgba(0,0,0,0.95));
+    }
+   
+    .introAnime .card .card-img-overlay p{
+        margin-top: 17px;
+    }
+    .introAnime .card .card-img-overlay i{
+        color: white;       
+    }
+    .introAnime .card .card-img-overlay button{       
+        padding: 7px;
+        border-radius: 6px;
+        border: 0;
+        transition: 1.3s;
+        background: transparent;
+        position: relative;
+        font-family: poppins;
+        background: white;
+        font-weight: bolder;
+        z-index: 10;
+        cursor: pointer;
+        color: black;
+        
+    }   
+    .introAnime .card .card-img-overlay button::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 50%;
+        border-radius: 7px;
+        z-index: -1;
+        background: rgba(218, 3, 247, 0.955);
+        transition: 0.7s;
+    }
+    .introAnime .card .card-img-overlay button:hover:after{
+        width: 100%;
+      
+    }
+    .introAnime .card .card-img-overlay .age,.hd{
+        background: rgb(5, 5, 0);
+        color: #fcfdfb;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    .animeList .card{
+        height: 30vh;       
+        width: 20vh;
+        margin-right: 9px;
+    }
+    .animeList .card-group{
+        margin-top: -40px;
+    }
+    .animeList .card-img-overlay{
+        margin-top: 95px;
+        color: white;
+        text-shadow: 2px 2px #030303;
+        cursor: pointer;    
+        transition: 0.7s;   
+        opacity: 0;
+        height: 120px;
+    }
+    .animeList .card-img-overlay .card-title{
+        font-size: 14px;
+    }
+    .animeList .card-img-overlay:hover{
+        background: black;
+        opacity: 1;
+    }
+    .animeList .card-img-overlay .btn{
+        text-shadow: none;
+        
+    }
+    .animeList .card-img-top{
+         height: 30vh;
+         position: relative;
+    }
+   
+     .btn{
+        font-size: 12px;
+        margin-top: 6px;
+        margin-left: -4px;
+        cursor: pointer;
+    }
+    .animeList h2{
+        margin-bottom: 52px;
+        font-size: 20px;
+    }
+    .animeList .card .wishlist{
+        scale: 1.5;
+        position: absolute;
+        top: 10px;
+        left: 83%;
+        cursor: pointer;
+        transition: 0.8s;
+        color: grey;
+        transition:  all 1.9s;
+    }
+    .animeList .card .wishlist:active{
+        transform: scale(1.9);
+    }
+    .active{
+       color: rgb(229, 13, 13);
+    }
+    #page2{
+   background:linear-gradient(rgba(0,0,0,0.95), rgba(215, 5, 238, 0.97),rgba(209, 1, 241, 0.921)),url('https://w0.peakpx.com/wallpaper/24/511/HD-wallpaper-anime-anime-anime-collage.jp');
+   animation-name: animebackground;
+   animation-duration: 20s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+}
+
+@keyframes animebackground {
+  from { background-position: 0 0; }
+  to { background-position: -2000px 0; }
+}
+
+    #page2{
+        max-height: 60vh;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    #page2 h1{
+        margin-bottom: 0px;
+        transform: translateY(-18px);
+    }
+    #page2 .quoteAuthor{
+       display: flex;
+       justify-content: flex-end;
+       font-size: 12px;
+       margin-top: 9px;
+    }
+    #page2 .card{
+       box-shadow: 0px 1px 8px 5px rgba(220, 83, 52, 0.667);
+       height:250px;
+       background: #ffffff26;
+       width: 100%;
+       padding: 30px;
+       font-size: 12px;
+       display: flex;
+       overflow: hidden;
+       text-align: center;      
+       font-weight: bolder;
+       position: relative;
+    }
+    #page2 .card .wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    } 
+    #page2 .card .wrapper ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100px;
+        cursor: pointer;
+
+    }
+    #page2 .card .wrapper ul li{
+        display: flex;
+        border-radius: 50%;
+        border: 2px solid var(--blue);
+        padding: 6px;
+        margin-right: 5px;
+        transform: translateX(-20px);
+        justify-content: space-between;
+    }
+    #page2 .card .wrapper button{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,220%);
+    }  
+   
+    #cartPage {
+
+  position: fixed;
+  top: 0;
+  right: -400px;  /*selfNote: change this back again,  dont forget */
+  bottom: 0;
+   border-radius: 12px;
+  width: 300px;
+  background: #3c6edaec;
+  z-index: 9999;
+  padding: 20px;
+  transition: all 0.8s ease-in-out;
+  display: flex;
+  
+  flex-direction: column;
+  align-items: flex-start
+  
+  
+  ;
+}
+#cartPage .btn{
+    top: 5px;
+    position: absolute;
+    left: 36%;
+}
+#cartPage li{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 90px;
+}
+#cartPage img{
+    height: 70px;
+    width: 60px;
+    position: relative;
+}
+#cartPage div{
+    font-family: poppins;
+    color: rgb(3, 0, 3);
+    margin-top: 15px;
+}
+  #cartPage.showPage {
+  right:0px;
+}
+
+#wishCart .wishlist-item {
+  margin-bottom: 10px;
+}
+
+
+   @media screen and (max-width:768px) {
+    .introAnime .card .card-img-overlay{
+        padding-top: 50px;
+        
+    }
+    .introAnime{
+        
+    }
+    .header .nav button:nth-child(3){
+        display: none;
+    }
+    .header .search{
+        position: relative;
+    }
+    .header .search i{
+        position: absolute;
+        top: 0;
+        left: 77%;
+    }
+    .sidebar{
+        
+      
+    }
+    .sidebar i{
+       margin-bottom: 50px;
+    }
+   }
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="header  mt-5 mt-lg-2 d-flex ">
+            <nav class="navbar navbar-fixed-top   w-100  navbar-expand-sm bg-dark navbar-dark">
+                  <a class="navbar-brand" style="font-size: 30px;        font-family: 'Bruno Ace SC', cursive;
+                  "  href="#">Ascar Awards</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" style="color: white;" href="#">Home</a>
+                      </li>
+                      
+                     <li class="nav-item">
+                        <a class="nav-link" href="AscarAwardsHome.html" style="color: white; cursor: pointer;">Login</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <p class="w-100 d-flex flex-wrap">                                                                                                   </p> 
+                      <button class="btn btn-danger" type="submit">Search </button>
+                    </form>
+                </div>
+              </nav>
+        </div>
+        <div class="sidebar">
+            <i data-toggle="tooltip" onclick="switchPage()" title="Home" class="fa fa-home fa-2x"></i>
+         <a href="AscarAwardsPage2.html">   <i data-toggle="tooltip" title="Random info of cinema industry"  class="fa fa-quote-left fa-2x"></i></a>           <i data-toggle="tooltip" title="Cinema Reels" class="fa fa-superpowers fa-2x"></i>
+            <i data-toggle="tooltip" title="Podcasts" class="fa fa-podcast fa-2x"></i>
+            <i data-toggle="tooltip" title="Search" class="fa fa-search fa-2x"></i>
+            <i data-toggle="tooltip" title="Select Server" class="fa fa-server fa-2x"></i>
+        </div>
+    <div id="page1 ">  
+        <div class="introAnime "> <h2 style="color: #db06fc";>Nominees</h2>
+            <div class = "adiv">
+
+            
+
+                <div class="card text-start"> 
+                    <img class="card-img-top" src="https://e0.pxfuel.com/wallpapers/426/352/desktop-wallpaper-award-award-background.jpg" style="width:100%" height="200px">
+                    
+                        <div class="card-img-overlay">
+                        <div style="font-size: 15px;" class="frstLine">
+                            <i class=""></i>  &nbsp;  
+                            <i class=""></i>  &nbsp;
+                            <span class=""></span> &nbsp;
+                            
+                        </div>  
+                            <p class="w-50 d-flex flex-wrap">Support your Favourites and make them shine in the nights of AscarAwards</p>
+                            <div style="font-size: 50px;"></div>
+                            <p class="w-100 d-flex flex-wrap">           </p>
+                            <button id="bl_watch"> 
+                            <i class=" fa fa-play-circle" style="font-size: 16px;"></i> <span> VOTE NOW </span></button>  
+            </div>  
+         </div>      
+    </div> 
+      
+
+    <div class="animeList d-sm-flex flex-sm-column
+    flex-wrap">
+        <h2 style="color: white;">Best Movie of 2022 :</h2>
+        <div class="card-group row">
+           
+
+
+     
+   
+           <div class="col-4 col-md-2 col-lg-2"> 
+               <div class="card  col shadow p-2 mb-2 bg-black">  
+                   <img class="mySlides" src="https://www.themarysue.com/wp-content/uploads/2022/04/Everything-Everywhere-All-At-Once-Michelle-Yeoh-New-Movie-Daniels.jpg?resize=1200%2C675" alt="Card image cap">
+                   <div class="card-body" >
+                       <h5 class="card-title" style="color: white;">Everything Everywhere All AT Once</h5>
+                       <a class="btn btn-primary">Vote Now </a>
+                   </div>
+               </div>
+            </div>
+
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+               <div class="card  col shadow p-2 mb-2 bg-black">  
+                   <img class="card-img-top" src="https://images.squarespace-cdn.com/content/v1/5fbc4a62c2150e62cfcb09aa/33e62911-2708-4875-9c71-9926f571e1c1/The%2BBatman.jpg?format=1000w" alt="Card image cap">
+                   <div class="card-body" >
+                       <h5 class="card-title" style="color: white;">The Batman</h5>
+                       <a class="btn btn-primary">Vote Now</a>
+                   </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://i0.wp.com/www.smartprix.com/bytes/wp-content/uploads/2022/12/top-gun-maverick.jpg?fit=1200%2C675&ssl=1" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Top Gun Maverick</h5>
+                        <a class="btn btn-primary" >Vote Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://images.squarespace-cdn.com/content/v1/5e387eca8235c42f2e4dbe6c/04768cdf-4748-4a38-b02f-b1eb683b0252/All+Quiet+on+the+Western+Front+Collage+by+Simrah+Ahmad.png" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">All Quiet on the Western Front</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+                </div>
+            </div>
+      
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6q88a3D_TdT5-_fYbDe8wMMNWIOHRMD3FLA&usqp=CAU" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Avatar- The Way Of Water</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://static.toiimg.com/photo/msid-87788271/87788271.jpg" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Turning Red</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+            </div>  
+        </div>
+    </div> 
+    
+    
+
+    <div class="animeList d-sm-flex flex-sm-column
+    flex-wrap">
+        <h2 style="color: white;">Best Director of 2022 :</h2>
+        <div class="card-group row">
+           
+
+
+     
+   
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://i.insider.com/640f4243ff11870018c5006e?width=1000&format=jpeg&auto=webp" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">The Daniels</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+               <div class="card  col shadow p-2 mb-2 bg-black">  
+                   <img class="card-img-top" src="https://static.wikia.nocookie.net/marvel_dc/images/0/00/Matt_Reeves_001.png/revision/latest?cb=20220207145046" alt="Card image cap">
+                   <div class="card-body" >
+                       <h5 class="card-title" style="color: white;">Matt Reeves</h5>
+                       <a class="btn btn-outline-warning">Vote Now</a>
+                   </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://static.toiimg.com/thumb/msid-94761841,width-1280,resizemode-4/94761841.jpg" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Rajamouli</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://www.indiewire.com/wp-content/uploads/2023/06/James-Cameron.jpg" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">James Cameron</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+                </div>
+            </div>
+      
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://deadline.com/wp-content/uploads/2023/02/Joseph-Kosinski-dga-awards.jpg" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Joseph Kosinksi</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://m.media-amazon.com/images/M/MV5BMjM1ODMxMTAxMF5BMl5BanBnXkFtZTgwMjM4NDAyNDE@._V1_.jpg" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Robert Eggers</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div> 
+            </div>                
+          
+        </div>
+    </div>
+
+    <div class="animeList d-sm-flex flex-sm-column
+    flex-wrap">
+        <h2 style="color: white;">Best Actor of 2022 :</h2>
+        <div class="card-group row">
+           
+
+
+     
+   
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr3-gPhSb_BiH47vTwk78A-9Q-OlGiQjdW7Q&usqp=CAU" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Leonardo DiCaprio</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+               <div class="card  col shadow p-2 mb-2 bg-black">  
+                   <img class="card-img-top" src="https://imgix.bustle.com/uploads/getty/2023/4/27/53ba0147-0e5e-4475-be96-458de81297e9-getty-1483937169.jpg?w=800&fit=crop&crop=faces&auto=format%2Ccompress" alt="Card image cap">
+                   <div class="card-body" >
+                       <h5 class="card-title" style="color: white;">Richard Madden</h5>
+                       <a class="btn btn-primary">Vote Now</a>
+                   </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQef5AQua4lu4vTmxK787SQ3jfw6di6EHA8Xg&usqp=CAU" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Tom Cruise</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://www.bollywoodhungama.com/wp-content/uploads/2020/10/Oscar-Isaac-to-headline-Marvel-and-Disney-series-Moon-Knight.jpg" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Oscar Isaac</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+                </div>
+            </div>
+      
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPq0wHVx8J06IJ_nSe8QjhnqEMQo64Y2rCXA&usqp=CAU" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Christian Bale</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div class="col-4 col-md-2 col-lg-2"> 
+                <div class="card  col shadow p-2 mb-2 bg-black">  
+                    <img class="card-img-top" src="https://media.wired.com/photos/5d960eba01e4a4000826137c/master/w_2560%2Cc_limit/Culture_Monitor_WillSmith-465783654.jpg" alt="Card image cap">
+                    <div class="card-body" >
+                        <h5 class="card-title" style="color: white;">Will Smith</h5>
+                        <a class="btn btn-primary">Vote Now</a>
+                    </div> 
+            </div>                
+          
+        </div>
+    </div>
+
+     </div><!--1st page ends here-->
+     
+     <div id="cartPage"  class="container">
+        <div class="btn btn-warning"  style="height: 30px;">
+            Wishlist Items
+        </div>
+       
+      </div>
+    
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+var cartBtn = document.getElementById("cartPage");
+var toggleBtn = document.getElementById("wishToggle");
+
+toggleBtn.addEventListener("click", () =>{
+    cartBtn.classList.toggle("showPage")
+});
+
+var hearts = document.querySelectorAll(".wishlist i");
+var wishCart = document.getElementById("cartPage");
+
+hearts.forEach((heart) => {
+  heart.addEventListener("click", (event) => {
+    var cardTitle = event.target.closest(".card").querySelector(".card-title").textContent;
+    var cardImg = event.target.closest(".card").querySelector(".card-img-top").src;
+    var watch = event.target.closest(".card").querySelector("#btn").textContent;
+    var existingItem = wishCart.querySelector(`.wishlist-item[data-title="${cardTitle}"]`);
+
+0
+
+    if (existingItem) {
+      wishCart.removeChild(existingItem);
+    } else {
+
+      var newItem = document.createElement("div");
+      newItem.classList.add("wishlist-item");
+      newItem.setAttribute("data-title", cardTitle);
+
+      newItem.innerHTML = `
+        <div>${cardTitle}</div>
+        <img src="${cardImg}" alt="${cardTitle}">
+        <div class="btn-primary w-75 p-2" style="cursor: pointer; font-size:11px; background:var(--blue); border-radius:20px">${watch}</div>
+      `;
+      
+      
+      wishCart.appendChild(newItem);
+    }
+  });
+});
+
+
+
+
+
+    var hearts = document.querySelectorAll(".wishlist i");
+
+    hearts.forEach((heart) => {
+      heart.addEventListener("click", () => {
+        heart.classList.toggle('active');
+        updateCount();
+      });
+    });
+
+  
+
+    function updateCount() {
+      var hearts = document.querySelectorAll(".wishlist i");
+      let count = 0;
+
+      hearts.forEach((heart) => {
+        if (heart.classList.contains("active")) {
+          count++;
+        }
+      });
+
+      document.getElementById("wishCount").textContent = count;
+    }
+
+    updateCount();
+
+
+$(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+
+   //2nd Page 
+   
+
+"Shahid Afridi","Shane Warne","Arjuna Ranatunga","Chris Gayle ","sunil narine","SA vs Aus in 1932 5hrs 53mins","Eng vs Aus in 1956",
+  "60,000runs included 199 centuries","career test average is =99.94","Lasith malinga-5 times","Guinness record! $161,295 dollars","161.3 km/h in 2003 world cup",
+  "age:59 years 181 days for Turkey","all out for 10 runs against Spain in 2023","21.5 overs -131 dot balls","501* runs in first class in 1994",
+  "20,000+ balls -2,611 wickets "
+];
+var nrquotes = quotes.length;
+
+async function show(){
+    var nxtQuote = document.getElementById("nextQuote");
+  nxtQuote.innerText = "Loading....";  
+  index = Math.floor(Math.random() * (nrquotes - 1));
+  $("#pquote").text(quotes[index]); 
+  $("#pauthor").text(authors[index]);
+   
+ await new Promise(resolve => setTimeout(resolve, 1500)) ;
+ nxtQuote.innerText = "New  fact";
+} 
+
+function playAudio() {
+            var textInput = document.getElementById("pquote").textContent;
+
+
+            if ('speechSynthesis' in window) {
+                var synthesis = window.speechSynthesis;
+
+                var utterance = new SpeechSynthesisUtterance(textInput);
+
+                utterance.lang = 'en-US'; 
+                utterance.rate = 1.0; 
+                utterance.pitch = 1.0; 
+
+                synthesis.speak(utterance);
+            } else {
+                alert('Speech synthesis is not supported in your browser.');
+            }
+        }
+
+</script>   
+</html>
+
+

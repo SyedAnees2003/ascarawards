@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile Sidebar</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+		.container {
+			display: flex;
+			flex-direction: row;
+			height: 100vh;
+		}
+		.sidebar {
+			background-color: #333;
+			color: #fff;
+			width: 200px;
+			height: 100%;
+			position: fixed;
+			left: -200px;
+			top: 0;
+			transition: all 0.3s ease-in-out;
+		}
+		.sidebar.active {
+			left: 0;
+		}
+		.sidebar .profile {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+		.sidebar .profile img {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			margin-bottom: 10px;
+		}
+		.sidebar .profile h4 {
+			margin-bottom: 5px;
+			font-size: 18px;
+		}
+		.sidebar .profile p {
+			margin-bottom: 5px;
+			font-size: 14px;
+			color: #ccc;
+		}
+        .sidebar .profile button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 20px;
+            border-color:#333 ;
+            font-size:16px ;
+        }
+        .sidebar .profile button:hover{
+            background-color:#333 ;
+            color:#fff ;
+        }
+        .main-content{
+            margin-left :200px ;
+            padding :20px ;
+        }
+        .main-content h1{
+            font-size :24px ;
+            margin-bottom :10px ;
+        }
+        .main-content p{
+            font-size :16px ;
+            margin-bottom :10px ;
+        }
+        .main-content span{
+            font-weight :bold ;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <div class="profile">
+            <img src="https://i.imgur.com/6bZnJzC.jpg" alt="Profile Picture">
+            <h4>John Doe</h4>
+            <p>john.doe@example.com</p>
+            <p>+1-202-555-0176</p>
+            <button id="profile-btn">View Profile</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>Welcome to my website!</h1>
+        <p>This is an example of how to create a sidebar with profile details like username, email, phone number, and some other details on clicking a profile button of a webpage.</p>
+        <p>Click the button below to view the profile:</p>
+        <button id="open-sidebar-btn">Open Sidebar</button>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    const openSidebarBtn = document.getElementById('open-sidebar-btn');
+    const profileBtn = document.getElementById('profile-btn');
+    const sidebar = document.querySelector('.sidebar');
+
+    openSidebarBtn.addEventListener('click', () => {
+        sidebar.classList.add('active');
+    });
+
+    profileBtn.addEventListener('click', () => {
+        alert('You clicked the profile button!');
+    });
+</script>
+
+</body>
+</html>
+
